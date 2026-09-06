@@ -57,7 +57,7 @@ honest to work on from the first render.
 
 ---
 
-## 🖥️ The command center
+## 📸 The command center
 
 <div align="center">
 
@@ -198,7 +198,7 @@ container instead of breaking the page.
 
 ---
 
-## 🏗️ Under the hood
+## 🔩 Under the hood
 
 ```text
         React UI  ·  pages, components, design system
@@ -286,7 +286,7 @@ a pipeline wants rows, not padding.
 
 ---
 
-## 🗺️ Roadmap
+## 🧭 Roadmap
 
 **✅ Working today** — onboarding and workspace personalisation · executive dashboard ·
 analytics · pipeline with full opportunity management · sales team and performance ·
