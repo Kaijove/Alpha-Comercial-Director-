@@ -1,11 +1,6 @@
 <div align="center">
 
-<!--
-  HERO BANNER
-  Drop the animated banner here as docs/banner.gif and uncomment the line below.
-  Nothing else in this README depends on it.
--->
-<!-- <img src="./docs/banner.gif" alt="Commercial Command Center" width="100%" /> -->
+<img src="./docs/banner.svg" alt="Commercial Command Center" width="100%" />
 
 # Commercial Command Center
 
@@ -17,12 +12,13 @@ source of truth.
 
 <br />
 
-[![React](https://img.shields.io/badge/React-18-1f2937?style=flat-square&logo=react&logoColor=61DAFB)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-strict-1f2937?style=flat-square&logo=typescript&logoColor=3178C6)](https://www.typescriptlang.org)
-[![Vite](https://img.shields.io/badge/Vite-6-1f2937?style=flat-square&logo=vite&logoColor=FFC72C)](https://vite.dev)
-[![Tailwind](https://img.shields.io/badge/Tailwind-v4-1f2937?style=flat-square&logo=tailwindcss&logoColor=38BDF8)](https://tailwindcss.com)
-[![Recharts](https://img.shields.io/badge/Recharts-2-1f2937?style=flat-square)](https://recharts.org)
-[![License](https://img.shields.io/badge/License-MIT-1f2937?style=flat-square)](./LICENSE)
+[![React 18](https://img.shields.io/badge/React_18-0B1020?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=0B1020)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-0B1020?style=for-the-badge&logo=typescript&logoColor=4C8DFF&labelColor=0B1020)](https://www.typescriptlang.org)
+[![Vite 6](https://img.shields.io/badge/Vite_6-0B1020?style=for-the-badge&logo=vite&logoColor=A78BFA&labelColor=0B1020)](https://vite.dev)
+[![Tailwind v4](https://img.shields.io/badge/Tailwind_v4-0B1020?style=for-the-badge&logo=tailwindcss&logoColor=38BDF8&labelColor=0B1020)](https://tailwindcss.com)
+[![Recharts](https://img.shields.io/badge/Recharts-0B1020?style=for-the-badge&logo=apacheecharts&logoColor=C084FC&labelColor=0B1020)](https://recharts.org)
+[![226 tests](https://img.shields.io/badge/226_tests-0B1020?style=for-the-badge&logo=vitest&logoColor=3FBF8F&labelColor=0B1020)](#-under-the-hood)
+[![MIT](https://img.shields.io/badge/MIT-0B1020?style=for-the-badge&logo=opensourceinitiative&logoColor=9AA6B8&labelColor=0B1020)](./LICENSE)
 
 **[Screens](#-the-command-center)** · **[How it thinks](#-one-chain-not-seven-dashboards)** · **[Architecture](#-under-the-hood)** · **[Quick start](#-quick-start)** · **[Roadmap](#-roadmap)**
 
