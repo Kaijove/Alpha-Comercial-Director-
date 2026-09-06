@@ -136,31 +136,30 @@
       <text x="1120" y="116" class="mini">SALES PIPELINE</text>
 
       <g class="f d6">
-        <rect x="1102" y="150" width="82" height="228" rx="9" fill="#0f131a" stroke="#1f2634"/>
+        <rect x="1102" y="150" width="82" height="150" rx="9" fill="#0f131a" stroke="#1f2634"/>
         <text x="1114" y="170" class="mini">LEAD</text><text x="1114" y="184" class="sub">14</text>
         <rect x="1114" y="194" width="58" height="24" rx="6" fill="#1a2130"/>
         <rect x="1114" y="224" width="58" height="24" rx="6" fill="#1a2130"/>
-        <rect x="1114" y="254" width="58" height="24" rx="6" fill="#1a2130"/>
       </g>
       <g class="f d7">
-        <rect x="1192" y="150" width="82" height="228" rx="9" fill="#0f131a" stroke="#1f2634"/>
+        <rect x="1192" y="150" width="82" height="150" rx="9" fill="#0f131a" stroke="#1f2634"/>
         <text x="1204" y="170" class="mini">QUAL</text><text x="1204" y="184" class="sub">10</text>
         <rect x="1204" y="194" width="58" height="24" rx="6" fill="#1a2130"/>
         <rect x="1204" y="224" width="58" height="24" rx="6" fill="#1a2130"/>
       </g>
       <g class="f d8">
-        <rect x="1282" y="150" width="82" height="228" rx="9" fill="#0f131a" stroke="#1f2634"/>
+        <rect x="1282" y="150" width="82" height="150" rx="9" fill="#0f131a" stroke="#1f2634"/>
         <text x="1294" y="170" class="mini">PROP</text><text x="1294" y="184" class="sub">8</text>
         <rect x="1294" y="194" width="58" height="24" rx="6" fill="#1e2740"/>
         <rect x="1294" y="224" width="58" height="24" rx="6" fill="#1a2130"/>
       </g>
       <g class="f d9">
-        <rect x="1372" y="150" width="82" height="228" rx="9" fill="#0f131a" stroke="#1f2634"/>
+        <rect x="1372" y="150" width="82" height="150" rx="9" fill="#0f131a" stroke="#1f2634"/>
         <text x="1384" y="170" class="mini">NEG</text><text x="1384" y="184" class="sub">6</text>
         <rect x="1384" y="194" width="58" height="24" rx="6" fill="#232c48"/>
       </g>
       <g class="f d10">
-        <rect x="1462" y="150" width="72" height="228" rx="9" fill="#0c1712" stroke="#1e3a2c"/>
+        <rect x="1462" y="150" width="72" height="150" rx="9" fill="#0c1712" stroke="#1e3a2c"/>
         <text x="1474" y="170" class="mini" fill="#4fcf9d">WON</text><text x="1474" y="184" class="sub" fill="#3fbf8f">6</text>
         <rect x="1474" y="194" width="48" height="24" rx="6" fill="#14281f"/>
         <rect x="1474" y="224" width="48" height="24" rx="6" fill="#14281f"/>
@@ -169,11 +168,11 @@
 
     <!-- One real signal from the intelligence engine, sliding in on the loop -->
     <g class="signal">
-      <rect x="1136" y="300" width="352" height="66" rx="11" fill="#12161f" stroke="#2a3346"/>
-      <circle cx="1162" cy="326" r="4" fill="#e5675f" class="pulse"/>
-      <text x="1180" y="323" class="mini" fill="#e5675f">CRITICAL - ACTIVITY</text>
-      <text x="1180" y="345" class="lbl" fill="#dbe1ea">19 opportunities have gone quiet</text>
-      <text x="1180" y="360" class="sub">640,500 of open pipeline, no activity for 12+ days</text>
+      <rect x="1102" y="318" width="432" height="58" rx="10" fill="#12161f" stroke="#2a3346"/>
+      <circle cx="1124" cy="340" r="4" fill="#e5675f" class="pulse"/>
+      <text x="1140" y="338" class="mini" fill="#e5675f">CRITICAL - ACTIVITY</text>
+      <text x="1140" y="359" class="lbl" fill="#dbe1ea">19 opportunities have gone quiet</text>
+      <text x="1140" y="372" class="sub">640,500 of open pipeline, no activity for 12+ days</text>
     </g>
   </g>
 
