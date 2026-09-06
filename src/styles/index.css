@@ -1,0 +1,606 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Commercial Command Center — Design System
+   Dark-first, low-chroma, data-forward. One accent, semantic signal colours,
+   generous spacing. Every token below is consumed through Tailwind utilities
+   (bg-surface, text-ink-muted, rounded-panel, shadow-panel, animate-rise, ...).
+   ========================================================================== */
+
+@theme {
+  /* --- Typography ------------------------------------------------------- */
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /*
+   * The type scale. Seven steps, each with a job, so a size is chosen by asking
+   * what the text *is* rather than by picking a pixel value. Before this the app
+   * had seventeen distinct arbitrary sizes across the pages, which is what made
+   * screens built weeks apart feel like different products.
+   *
+   *   2xs      micro labels, uppercase eyebrows, table headers
+   *   xs       metadata, captions, helper text
+   *   body     the default: UI text, table cells, list items
+   *   sm       emphasised body, panel descriptions
+   *   title    panel and card titles
+   *   section  headings inside a page
+   *   page     page titles
+   *   metric   KPI figures
+   *   display  large figures and the onboarding hero
+   */
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1rem;
+  --text-2xs--letter-spacing: 0.04em;
+
+  --text-body: 0.8125rem;
+  --text-body--line-height: 1.25rem;
+
+  --text-title: 0.9375rem;
+  --text-title--line-height: 1.35rem;
+
+  --text-section: 1.0625rem;
+  --text-section--line-height: 1.4rem;
+
+  --text-page: 1.625rem;
+  --text-page--line-height: 1.15;
+  --text-page--letter-spacing: -0.02em;
+
+  --text-metric: 1.625rem;
+  --text-metric--line-height: 1.05;
+  --text-metric--letter-spacing: -0.02em;
+
+  --text-metric-lg: 2rem;
+  --text-metric-lg--line-height: 1.05;
+  --text-metric-lg--letter-spacing: -0.022em;
+
+  --text-display: 2.5rem;
+  --text-display--line-height: 1.08;
+  --text-display--letter-spacing: -0.026em;
+
+  /* --- Surfaces --------------------------------------------------------- */
+  --color-canvas: #07080a;
+  --color-surface: #0b0d11;
+  --color-elevated: #101318;
+  --color-raised: #161a21;
+  --color-overlay: #0a0c10;
+
+  /* --- Lines ------------------------------------------------------------ */
+  --color-line-soft: #14181f;
+  --color-line: #1c2029;
+  --color-line-strong: #2a303b;
+
+  /* --- Ink -------------------------------------------------------------- */
+  --color-ink: #e8eaef;
+  --color-ink-muted: #949eac;
+  --color-ink-subtle: #616b79;
+  --color-ink-faint: #414b58;
+
+  /* --- Accent & signals ------------------------------------------------- */
+  --color-accent: #5b8cff;
+  --color-accent-hover: #789fff;
+  --color-accent-ink: #0a1024;
+
+  --color-positive: #3fbf8f;
+  --color-warning: #e0a458;
+  --color-negative: #e5675f;
+  --color-neutral: #7c8899;
+
+  /* --- Radii ------------------------------------------------------------ */
+  --radius-field: 10px;
+  --radius-panel: 16px;
+  --radius-sheet: 22px;
+
+  /* --- Elevation -------------------------------------------------------- */
+  --shadow-panel: 0 1px 0 0 rgb(255 255 255 / 0.03) inset,
+    0 12px 32px -20px rgb(0 0 0 / 0.9);
+  --shadow-pop: 0 24px 60px -24px rgb(0 0 0 / 0.85),
+    0 0 0 1px rgb(255 255 255 / 0.04);
+  --shadow-accent: 0 10px 30px -14px rgb(91 140 255 / 0.6);
+
+  /* --- Motion ----------------------------------------------------------- */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-fade-in: fade-in 0.45s var(--ease-out-soft) both;
+  --animate-rise: rise 0.5s var(--ease-out-soft) both;
+  --animate-scale-in: scale-in 0.4s var(--ease-out-soft) both;
+  --animate-step-forward: step-forward 0.42s var(--ease-out-soft) both;
+  --animate-step-back: step-back 0.42s var(--ease-out-soft) both;
+  --animate-shimmer: shimmer 2.4s linear infinite;
+  --animate-draw: draw 0.55s var(--ease-out-soft) 0.15s both;
+  --animate-halo: halo 3.6s ease-in-out infinite;
+  --animate-slide-in-right: slide-in-right 0.28s var(--ease-out-soft) both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes step-forward {
+  from { opacity: 0; transform: translateX(22px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes step-back {
+  from { opacity: 0; transform: translateX(-22px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -140% 0; }
+  100% { background-position: 240% 0; }
+}
+
+@keyframes draw {
+  from { stroke-dashoffset: 48; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes halo {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%      { opacity: 0.6; transform: scale(1.06); }
+}
+
+/* --- Base ---------------------------------------------------------------- */
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    font-variation-settings: "opsz" 22;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 34%, transparent);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid color-mix(in oklab, var(--color-accent) 70%, transparent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /*
+   * Touch targets.
+   *
+   * The interface is dense on purpose - a director scanning a pipeline wants
+   * rows, not padding - but a 28px segmented-control button is a poor target for
+   * a thumb. This raises the minimum height on coarse pointers only, so a tablet
+   * gets a comfortable hit area while the desktop layout stays exactly as dense
+   * as it was. Keyed on the pointer, not on width, because a narrow desktop
+   * window is still a mouse.
+   */
+  @media (pointer: coarse) {
+    button,
+    a[href],
+    [role='switch'],
+    [role='tab'] {
+      min-height: 40px;
+    }
+
+    /* Icon-only controls need the width too, not just the height. */
+    button:not(:has(span)):not(:has(p)) {
+      min-width: 40px;
+    }
+  }
+
+  /* Quiet, thin scrollbars that match the shell */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line-strong) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-line-strong);
+    border: 3px solid transparent;
+    background-clip: content-box;
+    border-radius: 999px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #39414f;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* --- Utilities ----------------------------------------------------------- */
+
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* Ambient light used behind the onboarding and empty states */
+@utility ambient {
+  background-image: radial-gradient(
+      120% 80% at 50% -10%,
+      color-mix(in oklab, var(--color-accent) 12%, transparent) 0%,
+      transparent 60%
+    ),
+    radial-gradient(80% 60% at 100% 100%, rgb(255 255 255 / 0.025) 0%, transparent 55%);
+}
+
+/* Faint grid used on reserved dashboard modules */
+@utility grid-fade {
+  background-image: linear-gradient(var(--color-line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-line-soft) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(120% 90% at 50% 0%, #000 10%, transparent 75%);
+}
+
+@utility skeleton-sheen {
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(255 255 255 / 0.045) 45%,
+    transparent 90%
+  );
+  background-size: 220% 100%;
+}
+
+/* ==========================================================================
+   Report document
+   The application is dark; a document that will be printed, exported to PDF or
+   forwarded to a board is not. Everything below is scoped to `.report-doc` and
+   uses its own explicit light palette rather than the app tokens, so the
+   preview on screen and the page that comes out of the printer are the same
+   document.
+   ========================================================================== */
+
+.report-doc {
+  --doc-ink: #14181f;
+  --doc-ink-muted: #4b5563;
+  --doc-ink-faint: #737d8c;
+  --doc-line: #e3e7ec;
+  --doc-line-strong: #c9d0d9;
+  --doc-accent: #2f5fd0;
+  --doc-positive: #167a52;
+  --doc-warning: #9a6100;
+  --doc-negative: #b03027;
+  --doc-tint: #f5f7fa;
+
+  background: #ffffff;
+  color: var(--doc-ink);
+  font-size: 10.5pt;
+  line-height: 1.55;
+  /* A4 content width at 96dpi minus 18mm margins each side. */
+  width: 100%;
+  max-width: 174mm;
+  margin-inline: auto;
+  padding: 14mm 12mm;
+}
+
+.report-doc h1,
+.report-doc h2,
+.report-doc h3 {
+  color: var(--doc-ink);
+  letter-spacing: -0.011em;
+  margin: 0;
+}
+
+.report-doc h1 { font-size: 19pt; font-weight: 600; line-height: 1.2; }
+.report-doc h2 { font-size: 12pt; font-weight: 600; }
+.report-doc h3 { font-size: 10pt; font-weight: 600; }
+
+.report-doc p { margin: 0; }
+.report-doc .doc-muted { color: var(--doc-ink-muted); }
+.report-doc .doc-faint { color: var(--doc-ink-faint); }
+
+/* --- Masthead ------------------------------------------------------------ */
+.report-doc .doc-masthead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16mm;
+  padding-bottom: 6mm;
+  border-bottom: 2px solid var(--doc-ink);
+}
+
+.report-doc .doc-eyebrow {
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--doc-ink-faint);
+}
+
+.report-doc .doc-logo {
+  width: 16mm;
+  height: 16mm;
+  object-fit: contain;
+  border-radius: 2mm;
+}
+
+/* --- Sections ------------------------------------------------------------ */
+.report-doc .doc-section {
+  margin-top: 9mm;
+  /* Keep a heading with at least the start of its content. */
+  break-inside: auto;
+}
+
+.report-doc .doc-section-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8mm;
+  padding-bottom: 2mm;
+  margin-bottom: 4mm;
+  border-bottom: 1px solid var(--doc-line-strong);
+  break-after: avoid;
+}
+
+.report-doc .doc-lede p + p { margin-top: 3mm; }
+
+/* --- Figures ------------------------------------------------------------- */
+.report-doc .doc-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--doc-line);
+  border: 1px solid var(--doc-line);
+}
+
+.report-doc .doc-kpi {
+  background: #ffffff;
+  padding: 3.5mm 4mm;
+}
+
+.report-doc .doc-kpi-label {
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--doc-ink-faint);
+}
+
+.report-doc .doc-kpi-value {
+  margin-top: 1.5mm;
+  font-size: 14pt;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.report-doc .doc-kpi-meta {
+  margin-top: 1.5mm;
+  font-size: 8pt;
+  color: var(--doc-ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.report-doc .doc-up { color: var(--doc-positive); }
+.report-doc .doc-down { color: var(--doc-negative); }
+.report-doc .doc-warn { color: var(--doc-warning); }
+
+/* --- Tables -------------------------------------------------------------- */
+.report-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+  font-variant-numeric: tabular-nums;
+}
+
+.report-doc thead th {
+  text-align: right;
+  font-size: 7pt;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--doc-ink-faint);
+  padding: 2mm 2mm;
+  border-bottom: 1px solid var(--doc-ink);
+  white-space: nowrap;
+}
+
+.report-doc thead th:first-child,
+.report-doc td:first-child { text-align: left; }
+
+.report-doc td {
+  text-align: right;
+  padding: 1.8mm 2mm;
+  border-bottom: 1px solid var(--doc-line);
+  vertical-align: top;
+}
+
+.report-doc tbody tr { break-inside: avoid; }
+.report-doc .doc-cell-name { font-weight: 500; }
+.report-doc .doc-cell-sub {
+  display: block;
+  font-size: 7.5pt;
+  font-weight: 400;
+  color: var(--doc-ink-faint);
+}
+
+/* --- Bars, used instead of chart libraries where a bar is enough ---------- */
+.report-doc .doc-bar {
+  position: relative;
+  height: 2.4mm;
+  background: var(--doc-line);
+  border-radius: 1.2mm;
+  overflow: hidden;
+}
+
+.report-doc .doc-bar > span {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  background: var(--doc-accent);
+  border-radius: 1.2mm;
+}
+
+.report-doc .doc-bar > span.is-positive { background: var(--doc-positive); }
+.report-doc .doc-bar > span.is-warning { background: var(--doc-warning); }
+.report-doc .doc-bar > span.is-negative { background: var(--doc-negative); }
+
+/* --- Highlight lists ----------------------------------------------------- */
+.report-doc .doc-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6mm;
+}
+
+.report-doc .doc-list { margin: 0; padding: 0; list-style: none; }
+.report-doc .doc-list li {
+  padding: 2mm 0;
+  border-bottom: 1px solid var(--doc-line);
+  break-inside: avoid;
+}
+.report-doc .doc-list li:last-child { border-bottom: 0; }
+
+.report-doc .doc-tint {
+  background: var(--doc-tint);
+  border: 1px solid var(--doc-line);
+  padding: 4mm;
+}
+
+.report-doc .doc-footer {
+  margin-top: 10mm;
+  padding-top: 3mm;
+  border-top: 1px solid var(--doc-line);
+  display: flex;
+  justify-content: space-between;
+  gap: 8mm;
+  font-size: 7.5pt;
+  color: var(--doc-ink-faint);
+}
+
+/* ==========================================================================
+   Print
+   What comes out of the printer, or out of "Save as PDF", is the document and
+   nothing else: no navigation, no toolbars, no controls.
+   ========================================================================== */
+
+@page {
+  size: A4;
+  margin: 16mm 18mm 18mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    color: #14181f;
+  }
+
+  /* Everything outside the document is application chrome. */
+  [data-print="hide"] { display: none !important; }
+
+  /* The document and everything inside it: no scrollers, no clipping, no
+     borders or shadows that would print as grey boxes around the page. */
+  [data-print="document"],
+  [data-print="document"] * {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  [data-print="document"] {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  [data-print="document"] > div {
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* The app lays out with flex and a fixed sidebar; a printed page does not.
+     The @page margin is the only margin that should apply, so the shell's own
+     layout padding is removed rather than added to it. */
+  body > * {
+    display: block !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  main > div {
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .report-doc {
+    max-width: none;
+    padding: 0;
+    font-size: 9.5pt;
+  }
+
+  /* Sections start cleanly rather than being split across a page break. */
+  .report-doc .doc-section { break-inside: avoid; }
+  .report-doc .doc-section-large { break-inside: auto; }
+  .report-doc .doc-page-break { break-before: page; }
+  .report-doc h1, .report-doc h2, .report-doc h3 { break-after: avoid; }
+
+  .report-doc table { break-inside: auto; }
+  .report-doc thead { display: table-header-group; }
+  .report-doc tfoot { display: table-footer-group; }
+
+  /* Colour has meaning in this document; keep it. */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

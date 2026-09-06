@@ -1,0 +1,10 @@
+# Normalise line endings in the repository so a contributor on Windows and one
+# on macOS or Linux never produce a whole-file diff just by opening a file.
+* text=auto eol=lf
+
+# Binary assets git should not try to diff or convert.
+*.woff2 binary
+*.woff   binary
+*.png    binary
+*.jpg    binary
+*.ico    binary
